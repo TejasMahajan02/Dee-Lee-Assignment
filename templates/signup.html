@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sign Up</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        * {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-weight: 400;
+
+        }
+
+        .main-container {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+
+        form {
+            width: 35vw;
+        }
+
+        h1 {
+            margin: 0;
+            padding: 0;
+            font-weight: 600;
+        }
+
+        span {
+            font-size: 0.88rem;
+        }
+
+        span>a {
+            color: black;
+            font-weight: 500;
+
+        }
+
+
+        @media screen and (max-width:1000px) {
+            form {
+                width: 80vw;
+            }
+
+            .custom-list {
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+        }
+
+        @media screen and (max-width:600px) {
+            form {
+                width: 90vw;
+            }
+
+            .custom-list {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media screen and (max-width:300px) {
+
+
+            .custom-list {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main-container">
+
+        <div class="sub-container">
+            <div class="mb-4">
+                <h1>Create an account</h1>
+                <span>Already registered with us? <a href="/signin">Sign in</a></span>
+            </div>
+            <form action="/signup" method="post">
+
+                <div class="mb-4">
+                    <label for="nameInput" class="form-label">Full name</label>
+                    <input type="text" class="form-control" id="nameInput" name="nameInput">
+                </div>
+                <div class="mb-4">
+                    <label for="usernameInput" class="form-label">Username</label>
+                    <input type="text" class="form-control" id="usernameInput" name="usernameInput">
+                </div>
+                <div>
+                    <label for="emailInput" class="form-label">Email address</label>
+                    <input type="email" class="form-control mb-1" id="emailInput" oninput="validateEmail()"
+                        name="emailInput">
+                    <span id="emailValidation" style="visibility: hidden; color: red;"><i
+                            class="fa-solid fa-circle-exclamation me-1" style="color: red;"></i>Invalid email address. Please enter a valid
+                        email.</span>
+                </div>
+
+                <div class="mb-4">
+                    <label for="passwordInput" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="passwordInput" oninput="validatePassword()" name="passwordInput">
+                    <ul class="custom-list mt-2" id="passwordRequirements">
+                        <li><i class="fa-solid fa-circle fa-2xs me-2" id="lengthIcon"></i>Use 8 or more characters</li>
+                        <li><i class="fa-solid fa-circle fa-2xs me-2" id="uppercaseIcon"></i>One uppercase letter</li>
+                        <li><i class="fa-solid fa-circle fa-2xs me-2" id="lowercaseIcon"></i>One lowercase letter</li>
+                        <li><i class="fa-solid fa-circle fa-2xs me-2" id="numberIcon"></i>One number</li>
+                        <li><i class="fa-solid fa-circle fa-2xs me-2" id="characterIcon"></i>One special character @#$
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="mb-4 form-check">
+                    <input type="checkbox" class="form-check-input border border-secondary" id="showBtn">
+                    <label class="form-check-label" for="showBtn">Show password</label>
+                </div>
+                <button type="submit" class="btn btn-dark px-3" id="submitBtn">Create Account</button>
+
+
+            </form>
+
+
+        </div>
+
+        <style>
+            ul {
+                display: grid;
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                font-size: small;
+                /* grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); */
+                grid-template-columns: 1fr 1fr;
+
+            }
+
+            i {
+                color: #6c757d;
+            }
+        </style>
+
+
+    </div>
+
+
+
+
+
+    </div>
+
+    <script>
+
+        document.querySelectorAll('span').forEach(s => {
+            const computedStyle = window.getComputedStyle(s);
+            console.log(computedStyle.fontSize);
+        });
+
+        // Select all input elements
+        const inputFields = document.querySelectorAll('input');
+
+        // Initialize variables to keep track of total space and input count
+        let totalSpace = 0;
+        let inputCount = 0;
+
+        // Iterate through the input fields to calculate the total space
+        for (let i = 1; i < inputFields.length; i++) {
+            const currentInput = inputFields[i];
+            const previousInput = inputFields[i - 1];
+
+            // Calculate the vertical space between the current and previous input fields
+            const verticalSpace = currentInput.getBoundingClientRect().top - previousInput.getBoundingClientRect().bottom;
+
+            // Add the space to the total
+            totalSpace += verticalSpace;
+            inputCount++;
+        }
+
+        // Calculate the average space
+        const averageSpace = totalSpace / inputCount;
+
+        // Display the average space
+        console.log(`Average vertical space between input fields: ${averageSpace}px`);
+
+
+        // Apply the margin to the input fields
+        // inputFields.forEach(input => {
+        //     input.style.marginBottom = `${averageSpace}px`; // You can use margin-top or margin-bottom as needed
+        // });
+
+    </script>
+
+    <script>
+        const emailInput = document.getElementById('emailInput');
+        const passwordInput = document.getElementById('passwordInput');
+        const showBtn = document.getElementById('showBtn');
+        showBtn.addEventListener('input', () => {
+            if (showBtn.checked) {
+                passwordInput.type = 'text';
+                showBtn.nextElementSibling.innerHTML = 'Hide password'
+            } else {
+                passwordInput.type = 'password';
+                showBtn.nextElementSibling.innerHTML = 'Show password'
+            }
+        });
+
+
+
+        function validateEmail() {
+            const emailValidation = document.getElementById('emailValidation');
+            const emailInput = document.getElementById('emailInput');
+            const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+
+            if (emailPattern.test(emailInput.value) || emailInput.value === '') {
+                emailValidation.style.visibility = 'hidden';
+                emailInput.style.color = 'black';
+                emailInput.classList.remove('is-invalid')
+            } else {
+                emailValidation.style.visibility = 'visible';
+                emailInput.style.color = 'red';
+                emailInput.classList.add('is-invalid')
+            }
+        }
+
+        function validatePassword() {
+            const password = document.getElementById('passwordInput').value;
+            const lengthIcon = document.getElementById('lengthIcon');
+            const uppercaseIcon = document.getElementById('uppercaseIcon');
+            const lowercaseIcon = document.getElementById('lowercaseIcon');
+            const numberIcon = document.getElementById('numberIcon');
+            const characterIcon = document.getElementById('characterIcon');
+
+            const lengthRegex = /.{8,}/;
+            const uppercaseRegex = /[A-Z]/;
+            const lowercaseRegex = /[a-z]/;
+            const numberRegex = /[0-9]/;
+            const specialCharRegex = /[@#$]/;
+
+            lengthIcon.style.color = lengthRegex.test(password) ? 'green' : '#6c757d';
+            uppercaseIcon.style.color = uppercaseRegex.test(password) ? 'green' : '#6c757d';
+            lowercaseIcon.style.color = lowercaseRegex.test(password) ? 'green' : '#6c757d';
+            numberIcon.style.color = numberRegex.test(password) ? 'green' : '#6c757d';
+            characterIcon.style.color = specialCharRegex.test(password) ? 'green' : '#6c757d';
+        }
+
+
+        const allInputFields = document.querySelectorAll('input');
+        console.log(allInputFields)
+     
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

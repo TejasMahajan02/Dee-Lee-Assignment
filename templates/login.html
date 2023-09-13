@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sign In</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        * {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .main-container {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .sub-container {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .sub-container h1 {
+            margin-bottom: 1.5rem;
+        }
+
+        .sub-container span {
+            margin-top: 3.5rem;
+        }
+
+        form {
+            width: 35vw;
+            display: flex;
+            flex-direction: column;
+        }
+
+
+
+        @media screen and (max-width:1000px) {
+            form {
+                width: 80vw;
+            }
+        }
+
+        @media screen and (max-width:600px) {
+            form {
+                width: 90vw;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main-container">
+
+        <div class="sub-container">
+            <h1>Login</h1>
+            {% if error %}
+            <div class="alert alert-danger">
+                {{error}}
+            </div>
+            {% endif %}
+
+            <form action="/signin" method="post">
+                <div class="alert alert-danger d-flex align-items-center" role="alert"
+                    style="height: 3.5rem; visibility: hidden;">
+                    <div>
+                        <i class="fa-solid fa-triangle-exclamation me-2"></i>Email & Password might be wrong.
+                    </div>
+                </div>
+                <div>
+                    <label for="emailInput" class="form-label">Email address</label>
+                    <input type="email" class="form-control" id="emailInput" name="emailInput" oninput="validateEmail()"
+                        value="{{email}}">
+                    <label for="emailValidation" class="form-label" id="emailValidation"
+                        style="visibility: hidden; font-size: small; color: red;"><i
+                            class="fa-solid fa-circle-exclamation me-1"></i>Invalid email address. Please enter a valid
+                        email.</label>
+                </div>
+                <div class="mb-3">
+                    <label for="passwordInput" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="passwordInput" name="passwordInput">
+                </div>
+                <div class="mb-3 form-check">
+                    <input type="checkbox" class="form-check-input border border-secondary" id="showBtn">
+                    <label class="form-check-label" for="showBtn">Show password</label>
+                </div>
+                <button type="submit" class="btn btn-dark">Submit</button>
+            </form>
+
+            <span>Not registered with us? <a href="/signup">Sign up</a></span>
+        </div>
+
+    </div>
+
+    <script>
+        const emailInput = document.getElementById('emailInput');
+        const passwordInput = document.getElementById('passwordInput');
+        const showBtn = document.getElementById('showBtn');
+        showBtn.addEventListener('input', () => {
+            if (showBtn.checked) {
+                passwordInput.type = 'text';
+                showBtn.nextElementSibling.innerHTML = 'Hide password'
+            } else {
+                passwordInput.type = 'password';
+                showBtn.nextElementSibling.innerHTML = 'Show password'
+            }
+        });
+
+
+        function validateEmail() {
+            const emailValidation = document.getElementById('emailValidation');
+            const emailInput = document.getElementById('emailInput');
+            const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+
+            if (emailPattern.test(emailInput.value) || emailInput.value === '') {
+                emailValidation.style.visibility = 'hidden';
+                emailInput.style.color = 'black';
+                emailInput.classList.remove('is-invalid')
+            } else {
+                emailValidation.style.visibility = 'visible';
+                emailInput.style.color = 'red';
+                emailInput.classList.add('is-invalid')
+            }
+        }
+
+
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

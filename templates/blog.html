@@ -1,0 +1,484 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        * {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .main-container {
+            width: 100%;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .sub-container {
+            width: 819px;
+            display: flex;
+            align-items: start;
+            flex-direction: column;
+            justify-content: center;
+            gap: 1rem;
+            margin-block: 3rem;
+        }
+
+        ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+
+        img {
+            border-radius: 8px;
+            width: 100%;
+            aspect-ratio: 16/9;
+            object-fit: cover;
+            object-position: center center;
+        }
+
+
+        .footer {
+            width: 100%;
+            color: rgb(124, 124, 124);
+            font-size: 12px;
+            align-items: center;
+
+            padding: 0;
+            margin: 0;
+            /* display: grid; */
+            /* grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); */
+            display: flex;
+            flex-direction: row;
+            list-style: none;
+            /* justify-content: space-between; */
+            /* border: solid red 1px; */
+            gap: 1rem;
+        }
+
+        @media screen and (max-width:600px) {
+            .sub-container {
+                width: 85%;
+            }
+
+            img {
+                width: 100%;
+                text-align: center;
+
+            }
+
+
+
+
+        }
+
+        a {
+            color: gray;
+            text-decoration: none;
+        }
+
+        .text-container {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            align-items: start;
+        }
+
+        .text-content {
+            max-height: 100px;
+            overflow: hidden;
+        }
+
+        .full-height {
+            max-height: none;
+        }
+
+        .read-more-button {
+            background-color: transparent;
+            border: transparent;
+            outline: transparent;
+            font-weight: 500;
+        }
+
+        strong {
+            font-weight: 600;
+        }
+
+
+        /* .offcanvas-backdrop {
+            display: none !important;
+        } */
+    </style>
+    <style>
+        .custom-list {
+            width: 100%;
+            height: fit-content;
+            border-block: solid var(--bs-border-color) 1px;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            padding-block: 8px;
+            display: flex;
+            flex-direction: row;
+            color: rgb(82, 82, 82);
+        }
+
+        .custom-list li {
+            width: 50px;
+        }
+
+        a {
+            color: rgb(82, 82, 82);
+        }
+
+        .profile-image {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: center center;
+        }
+    </style>
+
+    <style>
+        .dot::before {
+            content: "\2022";
+            font-size: 10px;
+            padding: 0;
+            margin: 0;
+            color: gray;
+        }
+    </style>
+    <style>
+        .cover-container {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: start;
+            width: 100%;
+            gap: 1rem;
+        }
+
+        .bottom-socials {
+            width: 100%;
+        }
+
+        .cover-container .content-div {
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+        }
+
+        .content-div-top {
+            display: flex;
+            flex-direction: row;
+            gap: 0.5rem;
+            font-size: 12px;
+            align-items: center;
+        }
+
+        .content-div-top .name-text {
+            font-size: 14px;
+            color: black;
+            font-weight: 500;
+        }
+
+        .content-div-top .follow-btn {
+            font-weight: 600;
+            font-size: small;
+        }
+
+        .content-div-bottom {
+            display: flex;
+            flex-direction: row;
+            gap: 0.5rem;
+            font-size: 11px;
+            align-items: center
+        }
+    </style>
+
+
+    <style>
+        .commenter,
+        .comment {
+            margin: 0;
+            padding: 0;
+        }
+
+
+        .comment {
+            font-size: small;
+            max-height: 40px;
+            overflow: hidden;
+        }
+
+        .comment-published {
+            font-size: 11px;
+
+        }
+
+        .comment-box {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .full-height {
+            max-height: none;
+        }
+    </style>
+    <style>
+        #read-more-button {
+            background: transparent;
+            border: transparent;
+            outline: transparent;
+            color: rgb(24, 107, 24);
+            font-weight: 500;
+            font-size: small;
+        }
+    </style>
+
+    <style>
+        .nav-container {
+            width: 90%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .nav-bar {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            width: 819px;
+            height: 80px;
+        }
+
+
+        .nav-bar .links a {
+            text-decoration: none;
+            color: black;
+            padding: 0.5rem 1.5rem;
+        }
+
+        .nav-bar .links a.active {
+            text-decoration: none;
+            color: white;
+            background-color: green;
+            padding: 0.5rem 1.2rem;
+            border-radius: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main-container">
+
+        <div class="nav-container">
+            <div class="nav-bar">
+                <a href="/">
+                    <h3>MyBlog</h3>
+                </a>
+                <div class="links">
+                    <a href="/signin">Sign In</a>
+                    <a href="/signup" class="active">Get Started</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="sub-container">
+
+
+            <h1>{{allBlogs['title']}}</h1>
+
+
+            <!-- Profile -->
+            <div class="cover-container">
+                <img src="{{ url_for('static', filename='images/' + allBlogs['profile_picture']) }}"
+                    alt="{{allBlogs['profile_picture']}}" class="profile-image">
+
+                <div class="content-div">
+                    <div class="content-div-top">
+                        <a href="/{{allBlogs['username']}}" class="name-text">{{allBlogs['name']}}</a>
+                        <span class="dot"></span>
+                        <a href="#" class="follow-btn">Follow</a>
+                    </div>
+                    <div class="content-div-bottom">
+                        <span id="reading-time"></span>
+                        <span class="dot"></span>
+                        <span id="blog-published">{{allBlogs['blog_published']}}</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Socials -->
+            <ul class="custom-list">
+                <li><i class="fa-regular fa-heart me-2"></i><span style="font-size: 14px;"> {% if allBlogs['likes'] != '0'%}
+                        {{allBlogs['likes']}}
+                        {% endif %}
+                    </span></li>
+                <li><a data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"><i
+                            class="fa-regular fa-comment me-2"></i></a><span style="font-size: 14px;">{{allBlogs['comments']
+                        | length}}</span></li>
+                <li style="margin-left: auto; text-align: end;"><a href="#"><i
+                            class="fa-solid fa-up-right-from-square"></i></a></li>
+            </ul>
+
+            <!-- Blog Image -->
+            <img src="{{ url_for('static', filename='images/' + allBlogs['image']) }}" alt="{{allBlogs['image']}}">
+
+            <!-- Blog Content -->
+
+            <div id="text-content">
+                {% set allParagraphs = allBlogs['content'].split('\n') %}
+                {% for index in range(allParagraphs|length) %}
+                {% if allParagraphs[index - 1] == '' and allParagraphs[index] != '' and allParagraphs[index+1] == ''
+                and allParagraphs[index].split(' ')|length < 10%} <p><strong>{{ allParagraphs[index]}}</strong></p>
+                    {% else %}
+                    <p>{{ allParagraphs[index] }}</p>
+                    {% endif %}
+                    {% endfor %}
+            </div>
+
+
+
+            <!-- Socials -->
+            <ul class="custom-list">
+                <li><i class="fa-regular fa-heart me-2"></i><span style="font-size: 14px;"> {% if allBlogs['likes'] != '0'%}
+                        {{allBlogs['likes']}}
+                        {% endif %}
+                    </span></li>
+                <li><a data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"><i
+                            class="fa-regular fa-comment me-2"></i></a><span style="font-size: 14px;">{{allBlogs['comments']
+                        | length}}</span></li>
+                <li style="margin-left: auto; text-align: end;"><a href="#"><i
+                            class="fa-solid fa-up-right-from-square"></i></a></li>
+            </ul>
+
+
+        </div>
+
+    </div>
+    <div class="container-fluid">
+        <div class="offcanvas offcanvas-end px-2" tabindex="-1" id="offcanvasNavbar"
+            aria-labelledby="offcanvasNavbarLabel">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Comments ({{allBlogs['comments']
+                    | length}})</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-header" style="display: flex; flex-direction: column; align-items: start; justify-content: center; gap: 0.8rem; border-bottom: solid var(--bs-border-color) 1px;">
+                <textarea name="commetBox" id="commentBox" cols="30" rows="3" class="form-control" placeholder="Write your thoughts..." style=" font-size: small;"></textarea>
+                <button class="btn btn-dark btn-sm px-3">Post</button>
+            </div>
+
+            <div class="offcanvas-body">
+                <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                    {% for user in allBlogs['comments'] %}
+                    <div class="comment-box">
+
+                        <div
+                            style="display: flex; flex-direction: column; align-items: start; text-align: start; gap: 0.5rem; padding-bottom: 1rem; border-bottom: solid 1px var(--bs-border-color); margin-bottom: 1rem;">
+                            <div style="display: flex; flex-direction: row; gap: 1rem; align-items: center; ">
+                                <img class="profile-image"
+                                    src="{{ url_for('static', filename = '/images/'+ 'blank-profile-picture.jpg')}}"
+                                    alt="blank-profile-picture.jpg">
+
+                                <div style="display: flex; flex-direction: column; gap: 2px;">
+                                    <h6 id="commenter" class="commenter">{{user['commenter']}}</h6>
+                                    <span id="comment-published"
+                                        class="comment-published">{{user['comment-published']}}</span>
+                                </div>
+                            </div>
+                            <div>
+                                <p id="comment" class="comment">{{user['comment']}}</p>
+                                <button id="read-more-button" onclick="showContent(this)">Read more...</button>
+                            </div>
+
+
+                        </div>
+                        {% endfor %}
+
+                </ul>
+
+            </div>
+        </div>
+    </div>
+
+
+    <script src="{{url_for('static', filename='script.js')}}"></script>
+    <script>
+        
+
+        const datePublished = document.getElementById('blog-published');
+        const datePublishedtimestamp = datePublished.innerHTML;
+        const formattedBlogTimestamp = formatTimestamp(datePublishedtimestamp);
+        datePublished.innerText = formattedBlogTimestamp;
+
+        const commentPublishedAll = document.querySelectorAll('.comment-published');
+        commentPublishedAll.forEach(commentdate => {
+            const commentText = commentdate.innerHTML;
+            const formatedCommentText = formatTimestamp(commentText);
+            commentdate.innerText = formatedCommentText;
+        });
+
+       
+
+        const textContent = document.getElementById('text-content');
+        const textContentData = textContent.innerHTML;
+        const readingTime = calculateReadingTime(textContentData);
+        document.getElementById('reading-time').innerText = readingTime;
+
+        function showContent(button) {
+            var textContent = button.previousElementSibling;
+
+            textContent.classList.toggle('full-height');
+            if (textContent.classList.contains('full-height')) {
+                button.innerText = 'Read less...';
+            } else {
+                button.innerText = 'Read more...';
+            }
+        }
+
+        document.querySelectorAll('.comment').forEach(comment => {
+            const buttonElement = comment.nextElementSibling;
+
+            if (comment.offsetHeight < 40) {
+                buttonElement.style.display = 'none';
+            } else {
+                buttonElement.style.display = 'block';
+            }
+
+
+        })
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
