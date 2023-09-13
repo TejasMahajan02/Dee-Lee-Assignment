@@ -1,4 +1,8 @@
 from pymongo import MongoClient
+from datetime import datetime
+import pytz
+import re
+
 uri = "mongodb://localhost:27017"
 
 # Create a new client and connect to the server
@@ -72,6 +76,24 @@ def extract_dataset(email=None, username=None, short_content=True):
                 # it will return only one document with profile and blogs as main keys
                 return dataset
 
-
     return {}
 
+
+def get_current_time():
+    # Get the current UTC time
+    utc_time = datetime.utcnow()
+
+    # Define the Indian Standard Time (IST) timezone
+    ist_timezone = pytz.timezone('Asia/Kolkata')
+    # Convert the UTC time to IST
+    ist_time = utc_time.replace(tzinfo=pytz.utc).astimezone(ist_timezone)
+
+    # Format the IST time as month date, year hour:min:sec
+    formatted_time = ist_time.strftime('%B %d, %Y %H:%M:%S')
+    return formatted_time
+
+
+def generate_blog_url(input_string):
+    blog_url = '-'.join([word for word in input_string.strip().split()
+                        if word.isalnum()])
+    return blog_url

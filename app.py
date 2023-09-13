@@ -7,23 +7,12 @@ from PIL import Image
 from main import *
 import time
 
-from datetime import datetime
-import pytz
-
-
 app = Flask(__name__)
 uri = "mongodb://localhost:27017"
 
 # Create a new client and connect to the server
 client = MongoClient(uri)
 collection = client.WebDesign.MyBlog
-
-# Get the current UTC time
-utc_time = datetime.utcnow()
-
-# Define the Indian Standard Time (IST) timezone
-ist_timezone = pytz.timezone('Asia/Kolkata')
-
 
 app.secret_key = b"e467b980fab392539c7ab1b0f85db21f14703bff1f8006c634b46ae24e2bdd5f"
 
@@ -60,7 +49,6 @@ def blogpage(username, url):
 
     if url_not_found == True:
         return redirect('/404')
-        
 
 
 @app.route('/<string:username>')
@@ -106,11 +94,7 @@ def signup():
         username = request.form['usernameInput']
         email = request.form['emailInput']
         password = request.form['passwordInput']
-        # Convert the UTC time to IST
-        ist_time = utc_time.replace(tzinfo=pytz.utc).astimezone(ist_timezone)
-
-        # Format the IST time as month date, year hour:min:sec
-        formatted_time = ist_time.strftime('%B %d, %Y %H:%M:%S')
+        formatted_time = get_current_time()
         data = {
             username: {
                 'Profile': {
@@ -133,6 +117,88 @@ def signup():
 
         return redirect('/')
     return render_template('signup.html')
+
+
+@app.route('/editor', methods=['GET', 'POST'])
+def editor():
+    if request.method == 'POST':
+        title = request.form['titleField']
+        desc = request.form['descField']
+        image = request.files['imageField']
+        category = request.form['selectField']
+        formatted_time = get_current_time()
+        blog_url = generate_blog_url(title)
+
+        if image.filename:
+            image_path = os.path.join(
+                app.config['UPLOAD_FOLDER'], image.filename)
+
+            image.save(image_path)
+
+            # Open the image using Pillow
+            img = Image.open(image_path)
+
+            # Resize the image while maintaining aspect ratio
+            img.thumbnail((THUMBNAIL_WIDTH, THUMBNAIL_HEIGHT))
+
+            # Adjust quality as needed
+            img.save(image_path, optimize=True, quality=50)
+
+        data = {
+            'title': title,
+            'content': desc,
+            'image': image.filename,
+            'category': category,
+            'url': blog_url,
+            'likes': 0,
+            'comments': [],
+            'blog_published': formatted_time,
+        }
+
+        return data
+
+    return render_template('editor.html')
+
+
+@app.route('/update', methods=['GET', 'POST'])
+def update():
+    if request.method == 'POST':
+        title = request.form['titleField']
+        desc = request.form['descField']
+        image = request.files['imageField']
+        category = request.form['selectField']
+        formatted_time = get_current_time()
+        blog_url = generate_blog_url(title)
+
+        if image.filename:
+            image_path = os.path.join(
+                app.config['UPLOAD_FOLDER'], image.filename)
+
+            image.save(image_path)
+
+            # Open the image using Pillow
+            img = Image.open(image_path)
+
+            # Resize the image while maintaining aspect ratio
+            img.thumbnail((THUMBNAIL_WIDTH, THUMBNAIL_HEIGHT))
+
+            # Adjust quality as needed
+            img.save(image_path, optimize=True, quality=50)
+
+        data = {
+            'title': title,
+            'content': desc,
+            'image': image.filename,
+            'category': category,
+            'url': blog_url,
+            'likes': 0,
+            'comments': [],
+            'blog_published': formatted_time,
+        }
+
+        return data
+
+    return render_template('update.html')
 
 
 if __name__ == "__main__":

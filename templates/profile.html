@@ -229,9 +229,28 @@
 
             <span style="font-size: small;">Joined on {{profile_response['profile_created']}}</span>
 
+            <button class="btn btn-dark px-3 btn-sm" style="width: fit-content;">Follow</button>
+
         </div>
 
+        <style>
+            .blog-section {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                width: 820px;
+                margin-top: 1.5rem;
+                align-items: center;
+               
+            }
+        </style>
+
+        <div class="blog-section">
+            <a href="/editor" class="btn btn-dark px-3">Create Blog</a>
+        </div>
         <!-- Blog section -->
+
+
 
         {% for blog in allBlogs %}
 
