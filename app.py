@@ -193,7 +193,7 @@ def update():
             'url': blog_url,
             'likes': 0,
             'comments': [],
-            'blog_published': formatted_time,
+            'blog_published': formatted_time
         }
 
         return data

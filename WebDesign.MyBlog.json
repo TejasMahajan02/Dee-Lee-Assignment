@@ -1,0 +1,163 @@
+[{
+  "_id": {
+    "$oid": "64ffff49e7bf4f2733077764"
+  },
+  "tejasmahajan02": {
+    "Profile": {
+      "name": "Tejas Mahajan",
+      "username": "tejasmahajan02",
+      "email": "tejasmahajan02@gmail.com",
+      "password": "TejasMahajan02",
+      "profile_picture": "blank-profile-picture.jpg",
+      "profile_summary": "Full Stack Software Developer",
+      "profile_created": "January 02, 2000",
+      "follower": "0",
+      "following": "0"
+    },
+    "Blogs": [
+      {
+        "title": "Exploring the Beauty of Kyoto, Japan",
+        "content": "Nestled in the heart of Japan, Kyoto is a city that seamlessly blends ancient traditions with modern life. It's a place where tranquil temples coexist with bustling markets, where the beauty of nature harmonizes with centuries-old architecture. If you're looking for a destination that offers a glimpse into Japan's rich cultural heritage and natural wonders, Kyoto should be at the top of your list.\n\nA Glimpse into Kyoto's History\n\nKyoto, once the imperial capital of Japan, has a history that stretches back over a thousand years. This history is vividly reflected in the city's stunning temples and shrines, which are scattered throughout its landscape. One of the most iconic is the Kinkaku-ji, or the Golden Pavilion, known for its shimmering golden exterior. It's a sight that leaves visitors in awe and captures the essence of Kyoto's historical significance.\n\nCherry Blossom Season\n\nSpring in Kyoto is a time of breathtaking beauty. Cherry blossoms, or sakura, blanket the city in delicate shades of pink and white. The best time to witness this phenomenon is during the hanami season, which typically occurs from late March to early April. Locals and tourists alike gather in parks and along riverbanks to enjoy picnics under the blooming cherry trees. Maruyama Park is a popular hanami spot, where the massive weeping cherry tree becomes the centerpiece of the festivities.\n\nTraditional Tea Culture\n\nKyoto is renowned for its tea culture, and a visit to the city would be incomplete without experiencing a traditional tea ceremony. The art of tea, or chanoyu, is deeply rooted in Japanese culture, emphasizing mindfulness and respect. At tea houses like Urasenke, visitors can partake in a tea ceremony and savor the moment as they sip matcha, a powdered green tea.\n\nArashiyama Bamboo Grove\n\nA visit to the Arashiyama Bamboo Grove is like stepping into another world. Towering bamboo stalks create a surreal and tranquil atmosphere that is perfect for a leisurely stroll or a photo op. The sound of the wind rustling through the bamboo leaves adds to the enchantment of this natural wonder. While in Arashiyama, don't forget to visit the famous Togetsukyo Bridge and the nearby monkey park for more unique experiences.\n\nFushimi Inari Shrine\n\nFushimi Inari Shrine is another must-see attraction in Kyoto. It's famous for its thousands of bright orange torii gates that form a winding path up the sacred Mount Inari. The hike to the summit offers breathtaking views of Kyoto and a sense of spiritual tranquility. Be prepared for a moderate hike, and don't forget to explore the smaller shrines and fox statues along the way.\n\nNijo Castle\n\nBuilt in the early 17th century, Nijo Castle is a UNESCO World Heritage Site that showcases the elegance of Japanese feudal architecture. The castle is renowned for its \"nightingale floors\" that chirp when walked upon, providing security by alerting residents to intruders. The meticulously landscaped gardens surrounding the castle are a serene escape from the hustle and bustle of the city.\n\nKyoto Cuisine\n\nKyoto is not only a feast for the eyes but also for the taste buds. The city is famous for its kaiseki, a traditional multi-course meal that showcases seasonal ingredients in beautifully presented dishes. Don't miss out on trying yudofu (tofu hot pot), matcha-flavored sweets, and yuba (tofu skin) dishes, all of which are Kyoto specialties.\n\nConclusion\n\nIn Kyoto, Japan's past and present come together in a tapestry of beauty, culture, and natural wonders. Whether you're exploring ancient temples, savoring traditional tea, or admiring the cherry blossoms, Kyoto offers an unforgettable experience. This city is a testament to Japan's enduring heritage and its commitment to preserving its rich history.\n\nSo, when you plan your next trip to Japan, make sure to set aside time for Kyoto. It's a destination that promises to leave you with cherished memories and a deep appreciation for the beauty and culture of this remarkable city. Kyoto is not just a place; it's an experience that will stay with you long after you've returned home.",
+        "image": "kyoto.jpg",
+        "category": "Travel",
+        "url": "Exploring-the-Beauty-of-Kyoto-Japan",
+        "comments": [
+          {
+            "commenter": "Traveler123",
+            "comment": "Kyoto is on my travel bucket list, and your blog has convinced me to plan a trip there!. Kyoto is on my travel bucket list, and your blog has convinced me to plan a trip there!. Kyoto is on my travel bucket list, and your blog has convinced me to plan a trip there!",
+            "comment-published": "August 28, 2023 05:45 AM"
+          },
+          {
+            "commenter": "Wanderlust23",
+            "comment": "Your photos are stunning! Can't wait to explore Kyoto someday.",
+            "comment-published": "August 28, 2023 05:45 AM"
+          },
+          {
+            "commenter": "TravelBoys",
+            "comment": "Amazing place to visit.",
+            "comment-published": "August 29, 2023 01:45 PM"
+          },
+          {
+            "commenter": "Tourister",
+            "comment": "Interesting place!",
+            "comment-published": "August 30, 2023 05:45 PM"
+          }
+        ],
+        "likes": "0",
+        "blog_published": "August 25, 2023 10:20:30 AM"
+      },
+      {
+        "title": "Mastering the Art of Sourdough Bread Baking",
+        "content": "Mastering the Art of Sourdough Bread Baking. Mastering the Art of Sourdough Bread Baking. Mastering the Art of Sourdough Bread Baking. Mastering the Art of Sourdough Bread Baking. Mastering the Art of Sourdough Bread Baking. Mastering the Art of Sourdough Bread Baking",
+        "image": "sourdough.jpg",
+        "category": "Food and Cooking",
+        "url": "Mastering-the-Art-of-Sourdough-Bread-Baking",
+        "comments": [
+          {
+            "commenter": "BreadLover88",
+            "comment": "I've been trying to make sourdough for ages, and your guide really helped. Thanks!",
+            "comment-published": "August 27, 2023 11:45 AM"
+          },
+          {
+            "commenter": "ChefMia",
+            "comment": "Your sourdough looks incredible! I'm inspired to try it myself.",
+            "comment-published": "August 28, 2023 05:45 AM"
+          }
+        ],
+        "likes": "0",
+        "blog_published": "August 27, 2023 10:20:30 AM"
+      }
+    ]
+  }
+},
+{
+  "_id": {
+    "$oid": "650001a0e7bf4f2733077765"
+  },
+  "sagarmahajan29": {
+    "Profile": {
+      "name": "Sagar Mahajan",
+      "username": "sagarmahajan29",
+      "email": "sagarmahajan29@gmail.com",
+      "password": "SagarMahajan29",
+      "profile_picture": "blank-profile-picture.jpg",
+      "profile_summary": "",
+      "profile_created": "Jun 29, 2003",
+      "follower": 0,
+      "following": 0
+    },
+    "Blogs": [
+      {
+        "title": "Exploring the Beauty of Kyoto, Japan",
+        "content": "Nestled in the heart of Japan, Kyoto is a city that seamlessly blends ancient traditions with modern life. It's a place where tranquil temples coexist with bustling markets, where the beauty of nature harmonizes with centuries-old architecture. If you're looking for a destination that offers a glimpse into Japan's rich cultural heritage and natural wonders, Kyoto should be at the top of your list.\n\nA Glimpse into Kyoto's History\n\nKyoto, once the imperial capital of Japan, has a history that stretches back over a thousand years. This history is vividly reflected in the city's stunning temples and shrines, which are scattered throughout its landscape. One of the most iconic is the Kinkaku-ji, or the Golden Pavilion, known for its shimmering golden exterior. It's a sight that leaves visitors in awe and captures the essence of Kyoto's historical significance.\n\nCherry Blossom Season\n\nSpring in Kyoto is a time of breathtaking beauty. Cherry blossoms, or sakura, blanket the city in delicate shades of pink and white. The best time to witness this phenomenon is during the hanami season, which typically occurs from late March to early April. Locals and tourists alike gather in parks and along riverbanks to enjoy picnics under the blooming cherry trees. Maruyama Park is a popular hanami spot, where the massive weeping cherry tree becomes the centerpiece of the festivities.\n\nTraditional Tea Culture\n\nKyoto is renowned for its tea culture, and a visit to the city would be incomplete without experiencing a traditional tea ceremony. The art of tea, or chanoyu, is deeply rooted in Japanese culture, emphasizing mindfulness and respect. At tea houses like Urasenke, visitors can partake in a tea ceremony and savor the moment as they sip matcha, a powdered green tea.\n\nArashiyama Bamboo Grove\n\nA visit to the Arashiyama Bamboo Grove is like stepping into another world. Towering bamboo stalks create a surreal and tranquil atmosphere that is perfect for a leisurely stroll or a photo op. The sound of the wind rustling through the bamboo leaves adds to the enchantment of this natural wonder. While in Arashiyama, don't forget to visit the famous Togetsukyo Bridge and the nearby monkey park for more unique experiences.\n\nFushimi Inari Shrine\n\nFushimi Inari Shrine is another must-see attraction in Kyoto. It's famous for its thousands of bright orange torii gates that form a winding path up the sacred Mount Inari. The hike to the summit offers breathtaking views of Kyoto and a sense of spiritual tranquility. Be prepared for a moderate hike, and don't forget to explore the smaller shrines and fox statues along the way.\n\nNijo Castle\n\nBuilt in the early 17th century, Nijo Castle is a UNESCO World Heritage Site that showcases the elegance of Japanese feudal architecture. The castle is renowned for its \"nightingale floors\" that chirp when walked upon, providing security by alerting residents to intruders. The meticulously landscaped gardens surrounding the castle are a serene escape from the hustle and bustle of the city.\n\nKyoto Cuisine\n\nKyoto is not only a feast for the eyes but also for the taste buds. The city is famous for its kaiseki, a traditional multi-course meal that showcases seasonal ingredients in beautifully presented dishes. Don't miss out on trying yudofu (tofu hot pot), matcha-flavored sweets, and yuba (tofu skin) dishes, all of which are Kyoto specialties.\n\nConclusion\n\nIn Kyoto, Japan's past and present come together in a tapestry of beauty, culture, and natural wonders. Whether you're exploring ancient temples, savoring traditional tea, or admiring the cherry blossoms, Kyoto offers an unforgettable experience. This city is a testament to Japan's enduring heritage and its commitment to preserving its rich history.\n\nSo, when you plan your next trip to Japan, make sure to set aside time for Kyoto. It's a destination that promises to leave you with cherished memories and a deep appreciation for the beauty and culture of this remarkable city. Kyoto is not just a place; it's an experience that will stay with you long after you've returned home.",
+        "image": "kyoto.jpg",
+        "category": "Travel",
+        "url": "Exploring-the-Beauty-of-Kyoto-Japan",
+        "comments": [
+          {
+            "commenter": "Traveler123",
+            "comment": "Kyoto is on my travel bucket list, and your blog has convinced me to plan a trip there!",
+            "comment-published": "August 28, 2023 05:45 AM"
+          },
+          {
+            "commenter": "Wanderlust23",
+            "comment": "Your photos are stunning! Can't wait to explore Kyoto someday.",
+            "comment-published": "August 28, 2023 05:45 AM"
+          },
+          {
+            "commenter": "TravelBoys",
+            "comment": "Amazing place to visit.",
+            "comment-published": "August 29, 2023 01:45 PM"
+          },
+          {
+            "commenter": "Tourister",
+            "comment": "Interesting place!",
+            "comment-published": "August 30, 2023 05:45 PM"
+          }
+        ],
+        "likes": "0",
+        "blog_published": "August 25, 2023 10:20:30 AM"
+      },
+      {
+        "title": "Mastering the Art of Sourdough Bread Baking",
+        "content": "Mastering the Art of Sourdough Bread Baking. Mastering the Art of Sourdough Bread Baking. Mastering the Art of Sourdough Bread Baking. Mastering the Art of Sourdough Bread Baking. Mastering the Art of Sourdough Bread Baking. Mastering the Art of Sourdough Bread Baking",
+        "image": "sourdough.jpg",
+        "category": "Food and Cooking",
+        "url": "Mastering-the-Art-of-Sourdough-Bread-Baking",
+        "comments": [
+          {
+            "commenter": "BreadLover88",
+            "comment": "I've been trying to make sourdough for ages, and your guide really helped. Thanks!",
+            "comment-published": "August 27, 2023 11:45 AM"
+          },
+          {
+            "commenter": "ChefMia",
+            "comment": "Your sourdough looks incredible! I'm inspired to try it myself.",
+            "comment-published": "August 28, 2023 05:45 AM"
+          }
+        ],
+        "likes": "0",
+        "blog_published": "August 27, 2023 10:20:30 AM"
+      }
+    ]
+  }
+},
+{
+  "_id": {
+    "$oid": "6501268a19fd21f36c319ea4"
+  },
+  "tejasmahajan117": {
+    "Profile": {
+      "name": "Tejas Mahajan",
+      "username": "tejasmahajan117",
+      "email": "tejasmahajan117@gmail.com",
+      "password": "TejasBro$1432",
+      "profile_picture": "blank-profile-picture.jpg",
+      "profile_created": "September 13, 2023 08:32:26",
+      "follower": 0,
+      "following": 0,
+      "profile_summary": ""
+    },
+    "Blogs": []
+  }
+}]
